@@ -10,6 +10,7 @@ export default function Footer() {
           className="linkedin-link"
           href="https://www.linkedin.com/in/alessia-maschio-a8317734/"
           target="_blank"
+          rel="noreferrer"
         >
           Alessia
         </a>{" "}
@@ -20,6 +21,7 @@ export default function Footer() {
         <a
           href="https://github.com/alessiamaschio/react-weather-app-project"
           target="_blank"
+          rel="noreferrer"
         >
           <i class="fab fa-github"></i> GitHub
         </a>
