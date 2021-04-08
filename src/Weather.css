@@ -1,0 +1,18 @@
+.Weather {
+  color: green;
+}
+
+img {
+  width: 25px;
+}
+
+.row {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
