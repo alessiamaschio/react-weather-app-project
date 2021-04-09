@@ -8,7 +8,6 @@ export default function Footer() {
       <div>
         Coded with <i className="far fa-heart"></i> by{" "}
         <a
-          className="linkedin-link"
           href="https://www.linkedin.com/in/alessia-maschio-a8317734/"
           target="_blank"
           rel="noreferrer"
