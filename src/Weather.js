@@ -9,8 +9,9 @@ export default function Weather() {
           <div className="col-8">
             <input
               type="search"
-              placeholder="Where do you want to go?"
-              className="form-control"
+              autoFocus="on"
+              placeholder="How is the weather in..."
+              className="form-control d-inline-block text-truncate"
             />
           </div>
           <div className="col-4">
@@ -23,15 +24,20 @@ export default function Weather() {
         </div>
       </form>
       <ul>
-        <li>Icon</li>
-        <li>Clouds</li>
+        <li className="icon-item pb-2">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"
+            alt="Current weather icon"
+          />
+        </li>
+        <li className="weather-description pb-3">Clouds</li>
         <li>Madrid</li>
-        <li>Last updated: 10:45</li>
+        <li className="last-update pb-4">Last updated: 10:45</li>
         <li>15°C</li>
         <li>Feels like: 15°</li>
       </ul>
-      <div className="row justify-content-around">
-        <div className="col-5 align-self-center ">
+      <div className="row justify-content-around  pt-5">
+        <div className="col-5 align-self-center">
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/003/original/wind.png?1616662071"
             alt="Wind icon"

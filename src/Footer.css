@@ -1,0 +1,12 @@
+footer {
+  color: #757575;
+  position: fixed;
+  bottom: 20px;
+  right: 28px;
+  font-size: 12px;
+}
+
+.footer-link,
+.fa-heart {
+  color: #e62a76;
+}

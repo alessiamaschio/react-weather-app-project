@@ -1,9 +1,5 @@
 .Weather {
-  color: green;
-}
-
-img {
-  width: 25px;
+  color: #212121;
 }
 
 .row {
@@ -15,4 +11,15 @@ ul {
   text-align: center;
   list-style: none;
   padding: 0;
+}
+.wind-humidity-icon {
+  width: 25px;
+}
+
+.form-control {
+  border: 1px solid #212121;
+  overflow: scroll;
+}
+form {
+  padding-bottom: 30px;
 }

@@ -1,1 +1,15 @@
+.App {
+  box-sizing: border-box;
+  margin: 0;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: "Lexend", sans-serif;
+}
 
+.container {
+  background-color: #fff;
+}
+
+.col-8 {
+  padding-right: 0;
+}
