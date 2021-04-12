@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import LastUpdated from "./LastUpdated";
 
 export default function Weather(props) {
   let [currentWeatherData, setCurrentWeatherData] = useState({ ready: false });
@@ -15,7 +16,7 @@ export default function Weather(props) {
       feelsLike: Math.round(response.data.main.feels_like),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      lastUpdated: "Last updated: 10:45",
+      lastUpdated: new Date(response.data.dt * 1000),
     });
   }
 
@@ -44,7 +45,7 @@ export default function Weather(props) {
         <ul>
           <li className="icon-item pb-2">
             <img
-              src="https://openweathermap.org/img/wn/${currentWeatherData.icon}@2x.png"
+              src="https://openweathermap.org/img/wn/currentWeatherData.icon@2x.png"
               alt="Current weather icon"
             />
           </li>
@@ -52,7 +53,9 @@ export default function Weather(props) {
             {currentWeatherData.description}
           </li>
           <li>{currentWeatherData.cityName}</li>
-          <li className="last-update pb-4">{currentWeatherData.lastUpdated}</li>
+          <li className="last-update pb-4">
+            <LastUpdated time={currentWeatherData.lastUpdated} />
+          </li>
           <li>{currentWeatherData.temperature}°C</li>
           <li>Feels like: {currentWeatherData.feelsLike}°</li>
         </ul>
@@ -79,7 +82,6 @@ export default function Weather(props) {
     );
   } else {
     let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
-    let city = "Madrid";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
 
     axios
