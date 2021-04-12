@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import LastUpdated from "./LastUpdated";
+
+import CurrentWeatherInfo from "./CurrentWeatherInfo";
 
 export default function Weather(props) {
   let [currentWeatherData, setCurrentWeatherData] = useState({ ready: false });
+  let [city, setCity] = useState(props.city);
   function handleResponse(response) {
     console.log(response.data);
     setCurrentWeatherData({
@@ -19,11 +21,29 @@ export default function Weather(props) {
       lastUpdated: new Date(response.data.dt * 1000),
     });
   }
+  function search() {
+    let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch(() => alert("I cannot find the city"));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityInput(event) {
+    setCity(event.target.value);
+  }
 
   if (currentWeatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-8">
               <input
@@ -31,6 +51,7 @@ export default function Weather(props) {
                 autoFocus="on"
                 placeholder="How is the weather in..."
                 className="form-control d-inline-block text-truncate"
+                onChange={handleCityInput}
               />
             </div>
             <div className="col-4">
@@ -42,52 +63,11 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <ul>
-          <li className="icon-item pb-2">
-            <img
-              src="https://openweathermap.org/img/wn/currentWeatherData.icon@2x.png"
-              alt="Current weather icon"
-            />
-          </li>
-          <li className="weather-description pb-3 text-capitalize">
-            {currentWeatherData.description}
-          </li>
-          <li>{currentWeatherData.cityName}</li>
-          <li className="last-update pb-4">
-            <LastUpdated time={currentWeatherData.lastUpdated} />
-          </li>
-          <li>{currentWeatherData.temperature}°C</li>
-          <li>Feels like: {currentWeatherData.feelsLike}°</li>
-        </ul>
-        <div className="row justify-content-around  pt-5">
-          <div className="col-5 align-self-center">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/003/original/wind.png?1616662071"
-              alt="Wind icon"
-              className="wind-humidity-icon"
-            />
-            <span id="wind">{currentWeatherData.wind} km/h</span>
-          </div>
-          <div className="col-4 align-self-center">
-            {" "}
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/004/original/humidity.png?1616662111"
-              alt="Humidity icon"
-              className="wind-humidity-icon"
-            />
-            <span id="humidity">{currentWeatherData.humidity}%</span>
-          </div>
-        </div>
+        <CurrentWeatherInfo weatherInfo={currentWeatherData} />
       </div>
     );
   } else {
-    let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
-
-    axios
-      .get(apiUrl)
-      .then(handleResponse)
-      .catch(() => alert("I cannot find the city"));
+    search();
     return (
       <div className="Weather">
         <form>
