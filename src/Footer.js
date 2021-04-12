@@ -25,7 +25,7 @@ export default function Footer() {
           rel="noreferrer"
           className="footer-link"
         >
-          <i class="fab fa-github"></i> GitHub
+          <i className="fab fa-github"></i> GitHub
         </a>
       </div>
     </footer>
