@@ -7,8 +7,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="CLEAR_DAY"
-          color="red"
-          size={42}
+          color="#f9ed69"
+          size={62}
           animate={true}
         />
       );
@@ -17,8 +17,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="CLEAR_NIGHT"
-          color="black"
-          size={42}
+          color="#2d4059"
+          size={62}
           animate={true}
         />
       );
@@ -28,8 +28,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="PARTLY_CLOUDY_DAY"
-          color="blue"
-          size={42}
+          color="#3490de"
+          size={62}
           animate={true}
         />
       );
@@ -39,8 +39,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="PARTLY_CLOUDY_NIGHT"
-          color="black"
-          size={42}
+          color="#071a52"
+          size={62}
           animate={true}
         />
       );
@@ -50,8 +50,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="CLOUDY"
-          color="black"
-          size={42}
+          color="#364f6b"
+          size={62}
           animate={true}
         />
       );
@@ -65,8 +65,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="RAIN"
-          color="black"
-          size={42}
+          color="#48466d"
+          size={62}
           animate={true}
         />
       );
@@ -77,8 +77,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="SNOW"
-          color="black"
-          size={42}
+          color="#769fcd"
+          size={62}
           animate={true}
         />
       );
@@ -88,8 +88,8 @@ export default function CurrentWeatherIcon(props) {
       return (
         <ReactAnimatedWeather
           icon="FOG"
-          color="black"
-          size={42}
+          color="#b9d7ea"
+          size={62}
           animate={true}
         />
       );

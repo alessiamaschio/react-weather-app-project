@@ -1,0 +1,21 @@
+.celsius,
+.fahrenheit,
+.vertical-bar {
+  font-size: 18px;
+  position: relative;
+  top: -15px;
+}
+
+.celsius {
+  padding-left: 5px;
+}
+
+.vertical-bar {
+  font-size: 14px;
+  border: 1px solid #212121;
+  margin: 0 5px;
+}
+
+.unit-link {
+  color: #36d1c4;
+}

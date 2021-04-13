@@ -6,7 +6,7 @@ import Weather from "./Weather";
 export default function App() {
   return (
     <div className="App">
-      <div className="container mt-5">
+      <div className="container">
         <Weather city="Madrid" />
         <Footer />
       </div>

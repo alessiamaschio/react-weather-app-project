@@ -1,0 +1,21 @@
+.weather-description {
+  font-size: 20px;
+}
+
+.city-name {
+  font-size: 19px;
+  font-weight: 400;
+  color: #005d6c;
+}
+
+.last-update {
+  font-size: 12px;
+}
+
+.current-temperature {
+  font-size: 40px;
+}
+
+.feels-like {
+  font-style: italic;
+}
