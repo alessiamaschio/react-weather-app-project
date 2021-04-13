@@ -4,18 +4,38 @@
   height: 100vh;
   overflow-y: auto;
   font-family: "Lexend", sans-serif;
-  background-color: #8ef6e4;
+  background-color: hsla(170, 85%, 76%, 0.5);
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .container {
   background-color: #fff;
-  margin: 50px auto;
+  margin: 20px auto;
   border-radius: 15px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .col-8 {
   padding-right: 0;
+}
+
+@media all and (min-width: 600px) {
+  .App {
+    background-color: hsla(288, 83%, 84%, 0.5);
+  }
+
+  .container {
+    max-width: 65%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .App {
+    background-color: hsla(55, 92%, 69%, 0.5);
+  }
+
+  .container {
+    max-width: 50%;
+  }
 }

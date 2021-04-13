@@ -15,7 +15,9 @@ export default function CurrentWeatherTemperature(props) {
   function convertToFahrenheit() {
     return Math.round((props.celsius * 9) / 5 + 32);
   }
-
+  function convertFahrenheit() {
+    return Math.round((props.feels * 9) / 5 + 32);
+  }
   if (unit === `celsius`) {
     return (
       <div>
@@ -27,6 +29,7 @@ export default function CurrentWeatherTemperature(props) {
             °F
           </a>
         </span>
+        <div className="feels-like">Feels like: {props.feels}°</div>
       </div>
     );
   } else {
@@ -40,6 +43,7 @@ export default function CurrentWeatherTemperature(props) {
         </span>
         <span className="vertical-bar"></span>
         <span className="fahrenheit">°F</span>
+        <div className="feels-like">Feels like: {convertFahrenheit()}°</div>
       </div>
     );
   }

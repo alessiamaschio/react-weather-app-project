@@ -12,10 +12,55 @@
 
 .vertical-bar {
   font-size: 14px;
-  border: 1px solid #212121;
-  margin: 0 5px;
+  border-left: 1px solid #212121;
+  margin: 0 5px 0 8px;
 }
 
 .unit-link {
   color: #36d1c4;
+}
+.unit-link:hover {
+  color: #008698;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.unit-link:active {
+  color: #23b1a5;
+  text-decoration: none;
+}
+
+.feels-like {
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media all and (min-width: 600px) {
+  .unit-link {
+    color: #eaa3fc;
+  }
+  .unit-link:hover {
+    color: #d86eff;
+  }
+
+  .unit-link:active {
+    color: #c238b5;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .unit-link {
+    color: #ff6f3c;
+  }
+  .unit-link:hover {
+    color: #ff9a3c;
+  }
+
+  .unit-link:active {
+    color: #ffc93c;
+  }
+
+  .feels-like {
+    font-size: 16px;
+  }
 }

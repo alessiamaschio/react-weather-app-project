@@ -21,10 +21,10 @@ export default function CurrentWeatherInfo(props) {
           <LastUpdated time={props.weatherInfo.lastUpdated} />
         </li>
         <li className="current-temperature">
-          <CurrentWeatherTemperature celsius={props.weatherInfo.temperature} />
-        </li>
-        <li className="feels-like">
-          Feels like: {props.weatherInfo.feelsLike}°
+          <CurrentWeatherTemperature
+            celsius={props.weatherInfo.temperature}
+            feels={props.weatherInfo.feelsLike}
+          />
         </li>
       </ul>
       <div className="row justify-content-around  pt-5">
@@ -32,7 +32,7 @@ export default function CurrentWeatherInfo(props) {
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/003/original/wind.png?1616662071"
             alt="Wind icon"
-            className="wind-humidity-icon"
+            className="wind-humidity-icon mr-1"
           />
           <span id="wind">{props.weatherInfo.wind} km/h</span>
         </div>
@@ -41,7 +41,7 @@ export default function CurrentWeatherInfo(props) {
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/004/original/humidity.png?1616662111"
             alt="Humidity icon"
-            className="wind-humidity-icon"
+            className="wind-humidity-icon mr-1"
           />
           <span id="humidity">{props.weatherInfo.humidity}%</span>
         </div>

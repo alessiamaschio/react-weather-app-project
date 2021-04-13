@@ -12,9 +12,6 @@ ul {
   list-style: none;
   padding: 0;
 }
-.wind-humidity-icon {
-  width: 25px;
-}
 
 .form-control {
   border: 1px solid #212121;
@@ -22,4 +19,11 @@ ul {
 }
 form {
   padding-bottom: 30px;
+}
+
+@media all and (min-width: 1200px) {
+  form {
+    padding-bottom: 60px;
+    padding-top: 30px;
+  }
 }

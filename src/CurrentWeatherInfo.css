@@ -15,7 +15,30 @@
 .current-temperature {
   font-size: 40px;
 }
+.wind-humidity-icon {
+  width: 20px;
+}
 
-.feels-like {
-  font-style: italic;
+@media all and (min-width: 600px) {
+  .city-name {
+    color: #ba53de;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .weather-description {
+    font-size: 30px;
+  }
+  .city-name {
+    color: #ff165d;
+    font-size: 25px;
+  }
+
+  .last-update {
+    font-size: 15px;
+  }
+
+  .wind-humidity-icon {
+    width: 30px;
+  }
 }

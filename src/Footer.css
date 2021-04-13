@@ -1,12 +1,27 @@
 footer {
   color: #757575;
-  position: fixed;
-  bottom: 20px;
-  right: 28px;
-  font-size: 12px;
+  text-align: right;
+  font-size: 14px;
+  padding-top: 45px;
+  font-style: italic;
 }
 
 .footer-link,
 .fa-heart {
   color: #e62a76;
+}
+
+.footer-link:hover {
+  color: #ff165d;
+  text-decoration: underline;
+}
+
+@media all and (min-width: 1200px) {
+  footer {
+    font-size: 18px;
+    color: #212121;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
 }
