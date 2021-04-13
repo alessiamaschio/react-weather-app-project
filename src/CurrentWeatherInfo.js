@@ -1,6 +1,7 @@
 import React from "react";
 import LastUpdated from "./LastUpdated";
 import CurrentWeatherIcon from "./CurrentWeatherIcon";
+import CurrentWeatherTemperature from "./CurrentWeatherTemperature";
 
 export default function CurrentWeatherInfo(props) {
   return (
@@ -16,7 +17,9 @@ export default function CurrentWeatherInfo(props) {
         <li className="last-update pb-4">
           <LastUpdated time={props.weatherInfo.lastUpdated} />
         </li>
-        <li>{props.weatherInfo.temperature}°C</li>
+        <li>
+          <CurrentWeatherTemperature celsius={props.weatherInfo.temperature} />
+        </li>
         <li>Feels like: {props.weatherInfo.feelsLike}°</li>
       </ul>
       <div className="row justify-content-around  pt-5">
