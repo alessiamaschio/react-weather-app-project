@@ -1,15 +1,13 @@
 import React from "react";
 import LastUpdated from "./LastUpdated";
+import CurrentWeatherIcon from "./CurrentWeatherIcon";
 
 export default function CurrentWeatherInfo(props) {
   return (
     <div className="CurrentWeatherInfo">
       <ul>
         <li className="icon-item pb-2">
-          <img
-            src="https://openweathermap.org/img/wn/currentWeatherData.icon@2x.png"
-            alt="Current weather icon"
-          />
+          <CurrentWeatherIcon iconCode={props.weatherInfo.icon} />
         </li>
         <li className="weather-description pb-3 text-capitalize">
           {props.weatherInfo.description}
