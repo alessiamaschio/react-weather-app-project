@@ -20,6 +20,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       lastUpdated: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
   function search() {
@@ -32,7 +33,7 @@ export default function Weather(props) {
       .catch(() =>
         swal({
           title: "I cannot find the city...",
-          text: "Please make sure to enter a valid city name 😉",
+          text: "Are you sure you typed the city name correctly? 😉",
           icon: "error",
           button: "Try again!",
         })
@@ -72,7 +73,7 @@ export default function Weather(props) {
           </div>
         </form>
         <CurrentWeatherInfo weatherInfo={currentWeatherData} />
-        <Forecast />
+        <Forecast coords={currentWeatherData.coordinates} />
       </div>
     );
   } else {
