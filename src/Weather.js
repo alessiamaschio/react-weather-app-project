@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
 import Forecast from "./Forecast";
@@ -9,7 +10,6 @@ export default function Weather(props) {
   let [currentWeatherData, setCurrentWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.city);
   function handleResponse(response) {
-    console.log(response.data);
     setCurrentWeatherData({
       ready: true,
       cityName: response.data.name,
@@ -29,7 +29,14 @@ export default function Weather(props) {
     axios
       .get(apiUrl)
       .then(handleResponse)
-      .catch(() => alert("I cannot find the city"));
+      .catch(() =>
+        swal({
+          title: "I cannot find the city...",
+          text: "Please make sure to enter a valid city name 😉",
+          icon: "error",
+          button: "Try again!",
+        })
+      );
   }
 
   function handleSubmit(event) {
@@ -50,7 +57,7 @@ export default function Weather(props) {
               <input
                 type="search"
                 autoFocus="on"
-                placeholder="How is the weather in..."
+                placeholder="What's the weather like in..."
                 className="form-control d-inline-block text-truncate"
                 onChange={handleCityInput}
               />
@@ -78,7 +85,7 @@ export default function Weather(props) {
               <input
                 type="search"
                 autoFocus="on"
-                placeholder="How is the weather in..."
+                placeholder="What's the weather like in..."
                 className="form-control d-inline-block text-truncate"
               />
             </div>
