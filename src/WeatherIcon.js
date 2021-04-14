@@ -1,7 +1,7 @@
 import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
-export default function CurrentWeatherIcon(props) {
+export default function WeatherIcon(props) {
   switch (props.iconCode) {
     case "01d":
       return (
@@ -95,6 +95,12 @@ export default function CurrentWeatherIcon(props) {
       );
       break;
     default:
-      return <img src="./images/unicorn.png" alt="unicorn" />;
+      return (
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/007/124/original/unicorn.png?1618388153"
+          alt="unicorn"
+          width="25px"
+        />
+      );
   }
 }
