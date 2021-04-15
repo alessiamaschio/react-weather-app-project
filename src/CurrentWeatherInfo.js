@@ -9,7 +9,7 @@ export default function CurrentWeatherInfo(props) {
     <div className="CurrentWeatherInfo">
       <ul>
         <li className="icon-item pb-2">
-          <WeatherIcon iconCode={props.weatherInfo.icon} />
+          <WeatherIcon iconCode={props.weatherInfo.icon} size={64} />
         </li>
         <li className="weather-description pb-3 text-capitalize">
           {props.weatherInfo.description}

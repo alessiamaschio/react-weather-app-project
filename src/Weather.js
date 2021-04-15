@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import "./Weather.css";
 import axios from "axios";
 import swal from "sweetalert";
-
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
 import Forecast from "./Forecast";
+import "./Weather.css";
 
 export default function Weather(props) {
   let [currentWeatherData, setCurrentWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.city);
+
   function handleResponse(response) {
     setCurrentWeatherData({
       ready: true,
@@ -23,6 +23,16 @@ export default function Weather(props) {
       coordinates: response.data.coord,
     });
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityInput(event) {
+    setCity(event.target.value);
+  }
+
   function search() {
     let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -38,15 +48,6 @@ export default function Weather(props) {
           button: "Try again!",
         })
       );
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-  }
-
-  function handleCityInput(event) {
-    setCity(event.target.value);
   }
 
   if (currentWeatherData.ready) {
@@ -73,7 +74,7 @@ export default function Weather(props) {
           </div>
         </form>
         <CurrentWeatherInfo weatherInfo={currentWeatherData} />
-        <Forecast coords={currentWeatherData.coordinates} />
+        <Forecast coord={currentWeatherData.coordinates} />
       </div>
     );
   } else {

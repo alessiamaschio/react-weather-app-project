@@ -8,7 +8,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="CLEAR_DAY"
           color="#f9ed69"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -18,7 +18,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="CLEAR_NIGHT"
           color="#2d4059"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -29,7 +29,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="PARTLY_CLOUDY_DAY"
           color="#3490de"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -40,7 +40,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="PARTLY_CLOUDY_NIGHT"
           color="#071a52"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -51,7 +51,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="CLOUDY"
           color="#364f6b"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -66,7 +66,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="RAIN"
           color="#48466d"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -78,7 +78,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="SNOW"
           color="#769fcd"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -89,7 +89,7 @@ export default function WeatherIcon(props) {
         <ReactAnimatedWeather
           icon="FOG"
           color="#b9d7ea"
-          size={62}
+          size={props.size}
           animate={true}
         />
       );
@@ -99,7 +99,7 @@ export default function WeatherIcon(props) {
         <img
           src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/007/124/original/unicorn.png?1618388153"
           alt="unicorn"
-          width="25px"
+          width={props.size}
         />
       );
   }

@@ -6,6 +6,7 @@ import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 
 export default function Forecast(props) {
+  console.log(props);
   let [ready, setReady] = useState(false);
   let [forecastData, setForecastData] = useState(null);
 
@@ -15,7 +16,6 @@ export default function Forecast(props) {
   }
 
   if (ready) {
-    console.log(forecastData);
     return (
       <div className="Forecast pt-5">
         <ForecastDay forecastData={forecastData[0]} />
@@ -23,8 +23,8 @@ export default function Forecast(props) {
     );
   } else {
     let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
-    let lon = props.coords.lon;
-    let lat = props.coords.lat;
+    let lat = props.coord.lat;
+    let lon = props.coord.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     axios

@@ -3,6 +3,7 @@ import "./CurrentWeatherTemperature.css";
 
 export default function CurrentWeatherTemperature(props) {
   let [unit, setUnit] = useState(`celsius`);
+
   function displayFahrenheit(event) {
     event.preventDefault();
     setUnit(`fahrenheit`);
@@ -15,9 +16,11 @@ export default function CurrentWeatherTemperature(props) {
   function convertToFahrenheit() {
     return Math.round((props.celsius * 9) / 5 + 32);
   }
+
   function convertFahrenheit() {
     return Math.round((props.feels * 9) / 5 + 32);
   }
+
   if (unit === `celsius`) {
     return (
       <div>
