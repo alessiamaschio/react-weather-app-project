@@ -8,6 +8,7 @@ import "./Weather.css";
 export default function Weather(props) {
   let [currentWeatherData, setCurrentWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.city);
+  let [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
     setCurrentWeatherData({
@@ -73,8 +74,12 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <CurrentWeatherInfo weatherInfo={currentWeatherData} />
-        <Forecast coord={currentWeatherData.coordinates} />
+        <CurrentWeatherInfo
+          weatherInfo={currentWeatherData}
+          unit={unit}
+          setUnit={setUnit}
+        />
+        <Forecast coord={currentWeatherData.coordinates} unit={unit} />
       </div>
     );
   } else {

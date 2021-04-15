@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./CurrentWeatherTemperature.css";
 
 export default function CurrentWeatherTemperature(props) {
-  let [unit, setUnit] = useState(`celsius`);
+  // let [unit, setUnit] = useState(`celsius`);
 
   function displayFahrenheit(event) {
     event.preventDefault();
-    setUnit(`fahrenheit`);
+    props.setUnit("fahreheit");
   }
   function displayCelsius(event) {
     event.preventDefault();
-    setUnit(`celsius`);
+    props.setUnit("celsius");
   }
 
   function convertToFahrenheit() {
@@ -21,10 +21,10 @@ export default function CurrentWeatherTemperature(props) {
     return Math.round((props.feels * 9) / 5 + 32);
   }
 
-  if (unit === `celsius`) {
+  if (props.unit === `celsius`) {
     return (
       <div>
-        <span>{props.celsius}</span>
+        <span>{Math.round(props.celsius)}</span>
         <span className="celsius">°C</span>
         <span className="vertical-bar"></span>
         <span className="fahrenheit">

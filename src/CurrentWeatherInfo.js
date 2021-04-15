@@ -24,6 +24,8 @@ export default function CurrentWeatherInfo(props) {
           <CurrentWeatherTemperature
             celsius={props.weatherInfo.temperature}
             feels={props.weatherInfo.feelsLike}
+            unit={props.unit}
+            setUnit={props.setUnit}
           />
         </li>
       </ul>

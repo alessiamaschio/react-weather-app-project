@@ -1,7 +1,14 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
+  function roundTemperature(num) {
+    if (props.unit !== "celsius") {
+      num = Math.round((num * 9) / 5 + 32);
+    }
+    return `${Math.round(num)}°`;
+  }
   function convertDay() {
     let date = new Date(props.forecastData.dt * 1000);
     let day = date.getDay();
@@ -17,11 +24,12 @@ export default function ForecastDay(props) {
       </li>
       <li className="Forecast-Min-Max Forecast-Item pt-2">
         <span className="Forecast-Min">
-          {Math.round(props.forecastData.temp.min)}°
+          {roundTemperature(props.forecastData.temp.min)}
         </span>{" "}
         /{" "}
         <span className="Forecast-Max">
-          {Math.round(props.forecastData.temp.max)}°
+          {" "}
+          {roundTemperature(props.forecastData.temp.max)}
         </span>
       </li>
     </ul>
