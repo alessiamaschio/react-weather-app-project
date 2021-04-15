@@ -10,12 +10,12 @@ export default function ForecastDay(props) {
     return days[day];
   }
   return (
-    <ul>
-      <li className="Forecast-Day">{convertDay()}</li>
-      <li>
+    <ul className="pb-2">
+      <li className="Forecast-Day text-uppercase pb-2">{convertDay()}</li>
+      <li className="Forecast-Item">
         <WeatherIcon iconCode={props.forecastData.weather[0].icon} size={32} />
       </li>
-      <li className="Forecast-Min-Max">
+      <li className="Forecast-Min-Max Forecast-Item pt-2">
         <span className="Forecast-Min">
           {Math.round(props.forecastData.temp.min)}°
         </span>{" "}

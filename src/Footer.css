@@ -4,6 +4,8 @@ footer {
   font-size: 14px;
   padding-top: 45px;
   font-style: italic;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 .footer-link,
@@ -20,8 +22,7 @@ footer {
   footer {
     font-size: 18px;
     color: #212121;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    padding-bottom: 25px;
+    padding-right: 25px;
   }
 }

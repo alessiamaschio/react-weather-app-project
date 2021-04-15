@@ -1,0 +1,7 @@
+@media all and (min-width: 600px) {
+  .Forecast {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
