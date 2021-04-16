@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Heart from "react-animated-heart";
 import "./Footer.css";
 
 export default function Footer() {
+  const [isClick, setClick] = useState(false);
   return (
     <footer>
       {" "}
       <div>
-        Coded with <i className="far fa-heart"></i> by{" "}
+        <span className="Reference"> Coded with</span>
+        <span className="Heart">
+          <Heart isClick={isClick} onClick={() => setClick(!isClick)} />{" "}
+        </span>
+        by{" "}
         <a
           href="https://www.linkedin.com/in/alessia-maschio-a8317734/"
           target="_blank"

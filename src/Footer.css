@@ -1,7 +1,7 @@
 footer {
   color: #757575;
   text-align: right;
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 45px;
   font-style: italic;
   padding-bottom: 10px;
@@ -16,6 +16,17 @@ footer {
 .footer-link:hover {
   color: #ff165d;
   text-decoration: underline;
+}
+
+.Heart {
+  position: relative;
+  top: 41px;
+  right: -34px;
+}
+
+.Reference {
+  position: relative;
+  right: -63px;
 }
 
 @media all and (min-width: 1200px) {
