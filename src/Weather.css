@@ -21,6 +21,13 @@ form {
   padding-bottom: 30px;
 }
 
+.Summary {
+  font-size: 18px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
 @media all and (min-width: 1200px) {
   form {
     padding-bottom: 60px;

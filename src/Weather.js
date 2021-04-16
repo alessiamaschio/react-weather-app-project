@@ -3,6 +3,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
 import Forecast from "./Forecast";
+import Forecast2 from "./Forecast2";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -53,7 +54,7 @@ export default function Weather(props) {
 
   if (currentWeatherData.ready) {
     return (
-      <div className="Weather pt-3 pb-5">
+      <div className="Weather pt-5 pb-5">
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-8">
@@ -74,12 +75,24 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+
         <CurrentWeatherInfo
           weatherInfo={currentWeatherData}
           unit={unit}
           setUnit={setUnit}
         />
-        <Forecast coord={currentWeatherData.coordinates} unit={unit} />
+        <details className="mt-5">
+          <summary className="btn btn-outline-dark Summary">
+            Hourly Forecast
+          </summary>{" "}
+          <Forecast2 coord={currentWeatherData.coordinates} unit={unit} />
+        </details>
+        <details className="mt-4">
+          <summary className="btn btn-outline-dark Summary">
+            Daily Forecast
+          </summary>{" "}
+          <Forecast coord={currentWeatherData.coordinates} unit={unit} />
+        </details>
       </div>
     );
   } else {

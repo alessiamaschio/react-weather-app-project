@@ -22,7 +22,7 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
+
     case "02d":
     case "03d":
       return (
@@ -33,18 +33,18 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
+
     case "02n":
     case "03n":
       return (
         <ReactAnimatedWeather
           icon="PARTLY_CLOUDY_NIGHT"
-          color="#071a52"
+          color="#126e82"
           size={props.size}
           animate={true}
         />
       );
-      break;
+
     case "04d":
     case "04n":
       return (
@@ -55,7 +55,7 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
+
     case "09d":
     case "09n":
     case "10d":
@@ -70,7 +70,6 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
 
     case "13d":
     case "13n":
@@ -82,7 +81,7 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
+
     case "50d":
     case "50n":
       return (
@@ -93,7 +92,7 @@ export default function WeatherIcon(props) {
           animate={true}
         />
       );
-      break;
+
     default:
       return (
         <img
