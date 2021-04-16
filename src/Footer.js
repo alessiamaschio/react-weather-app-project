@@ -10,7 +10,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/alessia-maschio-a8317734/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="footer-link"
         >
           Alessia
@@ -22,7 +22,7 @@ export default function Footer() {
         <a
           href="https://github.com/alessiamaschio/react-weather-app-project"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="footer-link"
         >
           <i className="fab fa-github"></i> GitHub

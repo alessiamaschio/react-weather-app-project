@@ -18,21 +18,7 @@ export default function Forecast(props) {
     setReady(true);
   }
 
-  if (ready) {
-    return (
-      <div className="Forecast pt-5">
-        {forecastData.map(function (dailyForecast, index) {
-          if (index < 5) {
-            return (
-              <div key={index}>
-                <ForecastDay forecastData={dailyForecast} unit={props.unit} />
-              </div>
-            );
-          }
-        })}
-      </div>
-    );
-  } else {
+  function apiCall() {
     let apiKey = "bedfbe0fd1980c1b75bd73f4d5db9305";
     let lat = props.coord.lat;
     let lon = props.coord.lon;
@@ -49,6 +35,26 @@ export default function Forecast(props) {
           button: "Try again!",
         })
       );
+  }
+
+  if (ready) {
+    return (
+      <div className="Forecast pt-5">
+        {forecastData.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div key={index}>
+                <ForecastDay forecastData={dailyForecast} unit={props.unit} />
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
+    );
+  } else {
+    apiCall();
     return null;
   }
 }
