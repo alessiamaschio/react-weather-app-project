@@ -23,14 +23,14 @@ export default function ForecastDay(props) {
         <WeatherIcon iconCode={props.forecastData.weather[0].icon} size={32} />
       </li>
       <li className="Forecast-Min-Max Forecast-Item pt-2">
-        <span className="Forecast-Min">
-          {roundTemperature(props.forecastData.temp.min)}
-        </span>{" "}
-        /{" "}
         <span className="Forecast-Max">
           {" "}
           {roundTemperature(props.forecastData.temp.max)}
-        </span>
+        </span>{" "}
+        /{" "}
+        <span className="Forecast-Min">
+          {roundTemperature(props.forecastData.temp.min)}
+        </span>{" "}
       </li>
     </ul>
   );
